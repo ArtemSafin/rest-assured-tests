@@ -23,10 +23,10 @@ public class StatusTest {
     @Test
     void checkTotalWithResponseLogs() {
         given()
-                .log().all()
+                .log().uri()
                 .get("https://selenoid.autotests.cloud/status")
                 .then()
-                .log().all()
+                .log().body()
                 .body("total", is(21));
     }
 }
